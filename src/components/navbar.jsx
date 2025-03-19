@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../src/assets/logo.png";
+import Logo from "../assets/logo.png";
 import { useState } from "react";
 import { navLinks } from "../constants";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
@@ -10,12 +10,14 @@ const Navbar = () => {
     <header className="bg-white">
       <nav
         aria-label="Global"
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 "
       >
         <div className="flex lg:flex-1">
           <a href="#" className="flex gap-2 items-center">
             <img alt="" src={Logo} className="h-8 w-auto inline" />
-            <h1 className="text-xl text-blue-600">Favochino Tech</h1>
+            <h1 className="text-3xl font-medium text-blue-600">
+              Favochino Tech
+            </h1>
           </a>
         </div>
         <div className="hidden lg:flex gap-12">
