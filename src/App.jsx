@@ -1,19 +1,19 @@
 import React from "react";
-import { Navbar, Hero, Projects, Cta, Services, Footer } from "./components";
+import Navbar from "./components/navbar";
+import Footer from "./components/footer";
+import Home from "./components/Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
-    <div>
-      <div>
+    <div className="bg-dark">
+      <Router>
         <Navbar />
-        <Hero />
-      </div>
-      <div>
-        <Projects />
-        <Cta />
-        <Services />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
         <Footer />
-      </div>
+      </Router>
     </div>
   );
 };

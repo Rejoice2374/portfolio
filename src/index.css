@@ -1,8 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Roboto:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --font-roboto: "Roboto", sans-serif;
+  --color-dark: #2b2b2b;
+  --color-button: #a259ff;
+  --color-secondary: #3b3b3b;
+  --color-button-hov: #8a4fff;
+  --color-coolAsh: #858584;
+  --color-masala: #3b3b3b80;
+  --color-celeste: #cccccc;
+  --color-darkCeleste: #b3b3b3;
+  --color-blackCeleste: #2b2b2b;
+  --font-poppins: "Poppins", sans-serif;
+  --font-nunito: "Nunito Sans", sans-serif;
+  --font-roboto: "Roboto Condensed", sans-serif;
+  --font-work: "Work Sans", Helvetica;
+  --font-mono: "Noto Sans Mono", monospace;
+  --breakpoint-sm: 375px;
+  --breakpoint-md: 834px;
+  --breakpoint-lg: 1025px;
 }
 
 :root {
@@ -18,4 +36,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* globals.css */
+.divider {
+  @apply border-t border-coolAsh;
 }

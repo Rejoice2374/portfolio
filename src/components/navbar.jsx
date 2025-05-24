@@ -1,8 +1,9 @@
 import React from "react";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/Ft-logoText-purple.png";
 import { useState } from "react";
 import { navLinks } from "../constants";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -14,50 +15,39 @@ const Navbar = () => {
       >
         <div className="flex lg:flex-1">
           <a href="#" className="flex gap-2 items-center">
-            <img alt="" src={Logo} className="h-8 w-auto inline" />
-            <h1 className="text-3xl font-medium text-blue-600">
-              Favochino Tech
-            </h1>
+            <img alt="" src={Logo} className="h-10 w-auto inline" />
           </a>
         </div>
-        <div className="hidden lg:flex gap-12">
-          {navLinks.map((nav) => (
-            <a
-              href="#"
-              className="text-xl font-medium text-gray-900 hover:underline decoration-blue-400"
-            >
-              {nav.title}
-            </a>
+        <ul className="list-none lg:flex hidden justify-end items-center text-button flex-1 gap-2">
+          {navLinks.map((n) => (
+            <li key={n.id} className="p-[16px]">
+              <Link to={`/${n.path.toLowerCase()}`}>{n.title}</Link>
+            </li>
           ))}
-        </div>
+        </ul>
 
         <div className="lg:hidden flex flex-1 justify-end items-center">
           {toggleMenu ? (
             <XMarkIcon
-              className="hamburger text-black cursor-pointer w-6"
+              className="hamburger text-button cursor-pointer w-6"
               onClick={() => setToggleMenu(false)}
               aria-label="Close menu"
             />
           ) : (
             <Bars3Icon
-              className="hamburger text-black cursor-pointer w-6"
+              className="hamburger text-button cursor-pointer w-6"
               onClick={() => setToggleMenu(true)}
               aria-label="Open menu"
             />
           )}
           {toggleMenu && (
-            <div className="flex flex-col p-6 bg-white absolute top-10 mx-4 my-10 z-1 sidebar self-end font-bold sm:self-center left-6 right-6 drop-shadow-md">
-              {navLinks.map((nav) => (
-                <ul className="list-none flex flex-col justify-end items-center space-x-0 space-y-4 flex-1">
-                  <li
-                    key={nav.id}
-                    className="font-poppins font-normal cursor-pointer text-[16px] text-black"
-                  >
-                    <a href={`#${nav.id}`}>{nav.title}</a>
-                  </li>
-                </ul>
+            <ul className="flex flex-col gap-2 items-center absolute top-[80px] right-0 bg-secondary z-10 h-[100vh] p-[20px]">
+              {navLinks.map((n) => (
+                <li key={n.id} className="p-[16px]">
+                  <Link to={`/${n.path.toLowerCase()}`}>{n.title}</Link>
+                </li>
               ))}
-            </div>
+            </ul>
           )}
         </div>
       </nav>
