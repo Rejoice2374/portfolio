@@ -38,6 +38,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+
 /* globals.css */
 .divider {
   @apply border-t border-coolAsh;
