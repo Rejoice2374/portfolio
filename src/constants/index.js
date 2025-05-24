@@ -29,22 +29,22 @@ export const navLinks = [
 export const navIcons = [
   {
     id: 1,
-    icon: { AiFillGithub },
+    icon: AiFillGithub,
     link: "https://github.com/Rejoice2374/",
   },
   {
     id: 2,
-    icon: { FaLinkedinIn },
+    icon: FaLinkedinIn,
     link: "https://www.linkedin.com/in/rejoice-adeboye-272902189/",
   },
   {
     id: 3,
-    icon: { FaTwitter },
+    icon: FaTwitter,
     link: "https://x.com/RejoiceTheDev",
   },
   {
     id: 4,
-    icon: { FaInstagram },
+    icon: FaInstagram,
     link: "https://www.instagram.com/favochino23/",
   },
 ];
