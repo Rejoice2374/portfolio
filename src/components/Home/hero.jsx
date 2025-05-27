@@ -1,51 +1,81 @@
 import React from "react";
+import styles from "../../style";
+import { useState, useEffect } from "react";
+import headerImg from "../assets/img/header-img.svg";
+import { BsArrowRightCircle } from "react-icons/bs";
+import "animate.css";
+import TrackVisibility from "react-on-screen";
 
 const Hero = () => {
+  const [loopNum, setLoopNum] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [text, setText] = useState("");
+  const [delta, setDelta] = useState(300 - Math.random() * 100);
+  const [index, setIndex] = useState(1);
+  const period = 2000;
+  const toRotate = React.useMemo(
+    () => ["Web Developer", "Web Designer", "UI/UX Designer"],
+    []
+  );
+
+  useEffect(() => {
+    const tick = () => {
+      let i = loopNum % toRotate.length;
+      let fullText = toRotate[i];
+      let updatedText = isDeleting
+        ? fullText.substring(0, text.length - 1)
+        : fullText.substring(0, text.length + 1);
+
+      setText(updatedText);
+
+      if (isDeleting) {
+        setDelta((prevDelta) => prevDelta / 2);
+      }
+
+      if (!isDeleting && updatedText === fullText) {
+        setIsDeleting(true);
+        setIndex((prevIndex) => prevIndex - 1);
+        setDelta(period);
+      } else if (isDeleting && updatedText === "") {
+        setIsDeleting(false);
+        setLoopNum(loopNum + 1);
+        setIndex(1);
+        setDelta(500);
+      } else {
+        setIndex((prevIndex) => prevIndex + 1);
+      }
+    };
+
+    const ticker = setInterval(() => {
+      tick();
+    }, delta);
+
+    return () => {
+      clearInterval(ticker);
+    };
+  }, [text, delta, isDeleting, loopNum, period, toRotate]);
+
   return (
-    <div>
-      {/*
-  Heads up! 👋
-
-  This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
-*/}
-
-      <section className="relative bg-[url(https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)] bg-cover bg-center bg-no-repeat">
-        <div className="absolute inset-0 bg-gray-900/75 sm:bg-transparent sm:from-gray-900/95 sm:to-gray-900/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"></div>
-
-        <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
-          <div className="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
-            <h1 className="text-3xl font-extrabold text-white sm:text-5xl">
-              Let us find your
-              <strong className="block font-extrabold text-rose-500">
-                {" "}
-                Forever Home.{" "}
-              </strong>
-            </h1>
-
-            <p className="mt-4 max-w-lg text-white sm:text-xl/relaxed">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt
-              illo tenetur fuga ducimus numquam ea!
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-4 text-center">
-              <a
-                href="#"
-                className="block w-full rounded-sm bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow-sm hover:bg-rose-700 focus:ring-3 focus:outline-hidden sm:w-auto"
-              >
-                Get Started
-              </a>
-
-              <a
-                href="#"
-                className="block w-full rounded-sm bg-white px-12 py-3 text-sm font-medium text-rose-600 shadow-sm hover:text-rose-700 focus:ring-3 focus:outline-hidden sm:w-auto"
-              >
-                Learn More
-              </a>
-            </div>
-          </div>
+    <section className={`${styles.section}`}>
+      <div className={`${styles.container}`}>
+        <div className={`${styles.heroText} HeroText`}>
+          <span>Welcome to Favo's World!</span>
+          <h1>
+            Hi, I'm Rejoice Adeboye (alias, Favochino){" "}
+            <span className="wrap">{text}</span>
+          </h1>
+          <p>
+            I am a fullstack web devSeloper with 2 years working experience in
+            React.js, Laravel, Node.js and some much more. I also mastered web3
+            dApps development with the ability of writing secure and automated
+            smart contracts with no library.
+          </p>
         </div>
-      </section>
-    </div>
+        <div className="HeroImg">
+          <img src={headerImg} alt="" />
+        </div>
+      </div>
+    </section>
   );
 };
 
