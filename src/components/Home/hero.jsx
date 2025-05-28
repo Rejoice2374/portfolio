@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "../../style";
 import { useState, useEffect } from "react";
-import headerImg from "../assets/img/header-img.svg";
+import headerImg from "../../assets/header-img.svg";
 import { BsArrowRightCircle } from "react-icons/bs";
-import "animate.css";
-import TrackVisibility from "react-on-screen";
+// import "animate.css";
+// import TrackVisibility from "react-on-screen";
 
 const Hero = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -56,20 +56,23 @@ const Hero = () => {
   }, [text, delta, isDeleting, loopNum, period, toRotate]);
 
   return (
-    <section className={`${styles.section}`}>
+    <section className={`${styles.section} banner`}>
       <div className={`${styles.container}`}>
         <div className={`${styles.heroText} HeroText`}>
-          <span>Welcome to Favo's World!</span>
-          <h1>
+          <span className="tagline">Welcome to Favo's World!</span>
+          <h1 className="banner-heading">
             Hi, I'm Rejoice Adeboye (alias, Favochino){" "}
             <span className="wrap">{text}</span>
           </h1>
-          <p>
+          <p className="banner-text">
             I am a fullstack web devSeloper with 2 years working experience in
-            React.js, Laravel, Node.js and some much more. I also mastered web3
-            dApps development with the ability of writing secure and automated
-            smart contracts with no library.
+            React.js, Laravel, Node.js and some much more.
           </p>
+          <div className="banner-btns">
+            <a href="#connect" className="banner-btn">
+              Let's Connect <BsArrowRightCircle />
+            </a>
+          </div>
         </div>
         <div className="HeroImg">
           <img src={headerImg} alt="" />

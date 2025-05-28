@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { navLinks, navIcons } from "../constants";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { Link, useLocation } from "react-router-dom";
+import styles from "../style";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -55,7 +56,7 @@ const Navbar = () => {
           {navLinks.map((n) => (
             <li
               key={n.id}
-              className={`p-1 text-button hover:text-coolAsh transition duration-300 ease-in-out ${
+              className={`p-1 text-button hover:text-white transition duration-300 ease-in-out ${
                 activeLink === n.path.toLowerCase()
                   ? "border-b-2 border-button"
                   : ""
@@ -77,11 +78,16 @@ const Navbar = () => {
               href={n.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-button text-2xl hover:text-coolAsh transition duration-300 ease-in-out"
+              className="text-button text-2xl p-1.5 rounded-2xl hover:text-white hover:bg-button transition duration-300 ease-in-out"
             >
               {<n.icon />}
             </a>
           ))}
+        </div>
+        <div className="hidden lg:flex">
+          <a href="#connect">
+            <button className={`${styles.navBtnText}`}>Let’s Connect</button>
+          </a>
         </div>
 
         <div className="lg:hidden flex flex-1 justify-end items-center">

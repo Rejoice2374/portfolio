@@ -11,8 +11,11 @@
   --color-coolAsh: #858584;
   --color-masala: #3b3b3b80;
   --color-celeste: #cccccc;
+  --color-ashes: rgba(255, 255, 255, 0.5);
   --color-darkCeleste: #b3b3b3;
   --color-blackCeleste: #2b2b2b;
+  --color-ashly: #b8b8b8;
+  --color-textgradient: "linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%)";
   --font-poppins: "Poppins", sans-serif;
   --font-nunito: "Nunito Sans", sans-serif;
   --font-roboto: "Roboto Condensed", sans-serif;
@@ -48,10 +51,80 @@ html {
     hue-rotate(346deg);
 }
 
-.navButton {
+.banner img {
+  animation: updown 3s linear infinite;
+}
+@keyframes updown {
+  0% {
+    transform: translateY(-30px);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(-30px);
+  }
+}
+
+.wrap {
+  border-right: 0.08em solid #666;
 }
 
 /* globals.css */
+.banner {
+  @apply mt-0 pt-[160px] pb-[80px] bg-[url('./assets/banner-bg.png')] bg-top bg-cover bg-no-repeat;
+}
+
 .divider {
   @apply border-t border-coolAsh;
+}
+
+.navBtnText {
+  @apply font-bold text-button border border-button py-[12px] px-[28px] mx-4.5 text-[18px] cursor-pointer hover:bg-button hover:text-secondary transition-all duration-500 ease-in-out relative;
+}
+
+/* Banner Css */
+.HeroText {
+  @apply relative flex flex-col items-start self-stretch md:gap-[30px] gap-[40px] lg:w-[720px] md:w-[540px];
+}
+
+.tagline {
+  @apply inline-block text-[20px] font-bold py-2 px-2.5 border border-ashes bg-textgradient text-secondary mb-4;
+}
+
+.banner-heading {
+  @apply block text-[52px] font-bold text-amber-100 mb-5 lg:w-[92%] md:w-[80%];
+}
+
+.banner-text {
+  @apply text-[18px] text-ashly mb-2 lg:w-[92%] md:w-[80%];
+}
+
+.banner-btn {
+  @apply flex justify-center items-center mt-2 gap-2 text-white border border-button hover:scale-95 text-[20px] font-bold py-3 px-4 transition-all duration-500 ease-in-out relative w-fit;
+}
+
+/* Skills */
+.skill {
+  @apply pb-[50px] relative;
+}
+
+.skill-bx {
+  @apply rounded-[64px] text-center py-[60px] px-[50px] mt-[-60px];
+}
+
+.skillh2 {
+  @apply text-[45px] font-bold;
+}
+
+.skillp {
+  @apply text-ashly text-[18px] leading-[1.5em] mt-[14px] mb-[75px];
+}
+
+.skill-slider {
+  @apply w-[88%] mx-auto relative;
+}
+
+.skill-slider .item img {
+  @apply w-[50%] mx-auto mb-[15px];
 }

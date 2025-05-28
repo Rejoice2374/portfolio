@@ -1,5 +1,6 @@
 const styles = {
-  navButtonText: "font-bold text-white border-white px-[18px] py-[34px]",
+  navBtnText:
+    "font-bold text-button border border-button py-[12px] px-[28px] mx-4.5 text-[18px] cursor-pointer hover:bg-button hover:text-secondary transition-all duration-500 ease-in-out relative",
   boxWidth: "xl:max-w-[1280px] w-full",
   section:
     "flex items-center self-stretch justify-center relative md:py-[80px] py-[40px] font-work",
