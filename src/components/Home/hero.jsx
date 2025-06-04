@@ -57,7 +57,7 @@ const Hero = () => {
 
   return (
     <section className={`${styles.section} banner`}>
-      <div className={`${styles.container}`}>
+      <div className="container">
         <div className={`${styles.heroText} HeroText`}>
           <span className="tagline">Welcome to Favo's World!</span>
           <h1 className="banner-heading">

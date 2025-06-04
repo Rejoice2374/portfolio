@@ -4,8 +4,10 @@ const styles = {
   boxWidth: "xl:max-w-[1280px] w-full",
   section:
     "flex items-center self-stretch justify-center relative md:py-[80px] py-[40px] font-work",
+  section1:
+    "flex flex-col items-center self-stretch justify-center pb-[50px] relative md:py-[80px] py-[40px] font-work",
   container:
-    "flex item-start relative lg:w-[1050px] md:w-[690px] w-[315px] gap-[30px] lg:mx[-80px] ",
+    "flex md:flex-row flex-col-reverse items-start relative lg:w-[1050px] md:w-[840px] w-[315px] gap-[30px] lg:mx-[-80px] ",
 
   textBox:
     "flex flex-col items-start self-stretch md:gap-[20px] gap-[10px] relative",

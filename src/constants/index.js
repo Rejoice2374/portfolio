@@ -48,3 +48,10 @@ export const navIcons = [
     link: "https://www.instagram.com/favochino23/",
   },
 ];
+
+export const SkillLog = [
+  { id: 1, skill: "Web Development", score: 96 },
+  { id: 1, skill: "Web Design", score: 90 },
+  { id: 1, skill: "Brand Identity", score: 86 },
+  { id: 1, skill: "Logo Design", score: 92 },
+];

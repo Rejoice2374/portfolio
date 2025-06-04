@@ -105,7 +105,7 @@ const Navbar = () => {
             />
           )}
           {toggleMenu && (
-            <div className="flex flex-col absolute top-[90px] z-10 right-0 bg-secondary h-[100vh] p-[20px] w-[200px] rounded-lg shadow-lg">
+            <div className="flex flex-col absolute top-[75px] z-10 right-0 bg-secondary h-[100vh] p-[20px] w-[200px] rounded-lg shadow-lg">
               <ul className="flex flex-col gap-2 items-center">
                 {navLinks.map((n) => (
                   <li
