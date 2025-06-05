@@ -42,11 +42,28 @@ const Skills = () => {
             className="owl-carousel owl-theme skill-slider"
           >
             {SkillLog.map((ski) => (
-              <div className="item">
-                <div className="mb-4">
-                  <div className="relative circle-out">
-                    <p className="circle">{ski.score}%</p>
+              <div className="item p-2" key={ski.id}>
+                <div className="relative w-[160px] h-[160px] flex items-center justify-center mb-4">
+                  <div class="outer">
+                    <div class="inner">
+                      <p className="circle">{ski.score}%</p>
+                    </div>
                   </div>
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    version="1.1"
+                    width="160px"
+                    height="160px"
+                  >
+                    <defs>
+                      <linearGradient id="GradientColor">
+                        <stop offset="0%" stop-color="#e91e63" />
+                        <stop offset="100%" stop-color="#673ab7" />
+                      </linearGradient>
+                    </defs>
+                    <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+                  </svg>
                 </div>
                 <h5>{ski.skill}</h5>
               </div>

@@ -134,10 +134,6 @@ html {
   @apply flex flex-col items-center justify-center;
 }
 
-.circle-out {
-  @apply flex items-center justify-center h-[150px] w-[150px] border-10 border-button rounded-full;
-}
-
 .circle {
   @apply text-[36px] p-1 text-white;
 }
@@ -152,4 +148,46 @@ html {
 
 .background-image-left {
   @apply top-[28%] absolute bottom-0 w-[40%] -z-[4];
+}
+
+.outer {
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+  /* border: 1px solid red; */
+  padding: 20px;
+  box-shadow: 3px 3px 5px -1px rgba(0, 0, 0, 0.15),
+    -3px -3px 5px -1px rgba(255, 255, 255, 0.7);
+}
+.inner {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+    inset -2px -2px 3px -1px rgba(255, 255, 255, 0.7),
+    0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+circle {
+  fill: none;
+  stroke-width: 20px;
+  stroke: url(#GradientColor);
+  stroke-dasharray: 440; /* 2 * π * r */
+  stroke-dashoffset: 440; /* Adjust for percentage */
+  animation: loading 2s linear forwards;
+}
+
+@keyframes loading {
+  100% {
+    stroke-dashoffset: 154;
+  }
 }
