@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import colorSharp from "../../assets/color-sharp.png";
@@ -7,7 +8,6 @@ import styles from "../../style";
 const Skills = () => {
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 5,
     },
@@ -23,6 +23,10 @@ const Skills = () => {
       breakpoint: { max: 834, min: 0 },
       items: 1,
     },
+  };
+
+  const calculateOffset = (score) => {
+    return 440 - (440 * score) / 100;
   };
 
   return (
@@ -41,38 +45,78 @@ const Skills = () => {
             infinite={true}
             className="owl-carousel owl-theme skill-slider"
           >
-            {SkillLog.map((ski) => (
-              <div className="item p-2" key={ski.id}>
-                <div className="relative w-[160px] h-[160px] flex items-center justify-center mb-4">
-                  <div class="outer">
-                    <div class="inner">
-                      <p className="circle">{ski.score}%</p>
-                    </div>
-                  </div>
-
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    version="1.1"
-                    width="160px"
-                    height="160px"
-                  >
-                    <defs>
-                      <linearGradient id="GradientColor">
-                        <stop offset="0%" stop-color="#e91e63" />
-                        <stop offset="100%" stop-color="#673ab7" />
-                      </linearGradient>
-                    </defs>
-                    <circle cx="80" cy="80" r="70" stroke-linecap="round" />
-                  </svg>
-                </div>
-                <h5>{ski.skill}</h5>
-              </div>
+            {SkillLog.map((skillItem) => (
+              <SkillItem
+                key={skillItem.id}
+                skill={skillItem.skill}
+                score={skillItem.score}
+                offset={calculateOffset(skillItem.score)}
+              />
             ))}
           </Carousel>
         </div>
       </div>
       <img className="background-image-left" src={colorSharp} alt="Fine" />
     </section>
+  );
+};
+
+const SkillItem = ({ skill, score, offset }) => {
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (counter < score) {
+        setCounter(counter + 1);
+      } else {
+        clearInterval(interval);
+      }
+    }, 2000 / score);
+
+    return () => clearInterval(interval);
+  }, [counter, score]);
+
+  return (
+    <div className="item p-2 flex flex-col items-center">
+      <div className="relative w-[160px] h-[160px] flex items-center justify-center mb-4">
+        <div className="outer">
+          <div className="inner">
+            <p className="circle font-semibold text-[#555]">{counter}%</p>
+          </div>
+        </div>
+
+        <svg
+          className="absolute top-0 left-0"
+          xmlns="http://www.w3.org/2000/svg"
+          version="1.1"
+          width="160px"
+          height="160px"
+        >
+          <defs>
+            <linearGradient id={`GradientColor`}>
+              <stop offset="0%" stopColor="#e91e63" />
+              <stop offset="100%" stopColor="#673ab7" />
+            </linearGradient>
+          </defs>
+          <circle
+            cx="80"
+            cy="80"
+            r="70"
+            fill="none"
+            strokeWidth="20px"
+            stroke={`url(#GradientColor)`}
+            strokeLinecap="round"
+            strokeDasharray="440"
+            strokeDashoffset="440"
+            style={{
+              animation: "loading 2s linear forwards",
+              "--offset": offset,
+            }}
+          />
+        </svg>
+      </div>
+      <h5 className="text-white text-center mt-2">{skill}</h5>
+    </div>
   );
 };
 

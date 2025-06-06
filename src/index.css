@@ -167,27 +167,26 @@ html {
   align-items: center;
   justify-content: center;
   box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
-    inset -2px -2px 3px -1px rgba(255, 255, 255, 0.7),
     0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
 }
 
-svg {
+/* svg {
   position: absolute;
   top: 0;
   left: 0;
-}
+} */
 
-circle {
+/* circle {
   fill: none;
   stroke-width: 20px;
   stroke: url(#GradientColor);
-  stroke-dasharray: 440; /* 2 * π * r */
-  stroke-dashoffset: 440; /* Adjust for percentage */
+  stroke-dasharray: 440; 2 * π * r 
+  stroke-dashoffset: 440; Adjust for percentage 
   animation: loading 2s linear forwards;
-}
+} */
 
 @keyframes loading {
   100% {
-    stroke-dashoffset: 154;
+    stroke-dashoffset: var(--offset);
   }
 }
