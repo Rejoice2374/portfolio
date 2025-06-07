@@ -77,8 +77,8 @@ const SkillItem = ({ skill, score, offset }) => {
   }, [counter, score]);
 
   return (
-    <div className="item p-2 flex flex-col items-center">
-      <div className="relative w-[160px] h-[160px] flex items-center justify-center mb-4">
+    <div className="item">
+      <div className="skillChart">
         <div className="outer">
           <div className="inner">
             <p className="circle font-semibold text-[#555]">{counter}%</p>
