@@ -55,3 +55,36 @@ export const SkillLog = [
   { id: 1, skill: "Brand Identity", score: 86 },
   { id: 1, skill: "Logo Design", score: 92 },
 ];
+
+export const projects = [
+  {
+    title: "TechPro Institute",
+    description: "Development",
+    imgUrl: "https://favochino.site/",
+  },
+  {
+    title: "One of Wun",
+    description: "Development & Founder",
+    imgUrl: "https://quest.somnia.network/",
+  },
+  {
+    title: "Merit Circle",
+    description: "Design & Development",
+    imgUrl: "https://yaps.kaito.ai/referral/1688844193379069953",
+  },
+  {
+    title: "Reabeam-G Schools",
+    description: "Design & Development",
+    imgUrl: "",
+  },
+  {
+    title: "Home-easy",
+    description: "Design, Development & Founder",
+    imgUrl: "",
+  },
+  {
+    title: "ShopIt",
+    description: "Design, Development & Founder",
+    imgUrl: "",
+  },
+];
