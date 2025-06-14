@@ -50,7 +50,7 @@ const Projects2 = () => {
                     filter === "development" ? "text-white" : "text-coolAsh"
                   }`}
                 >
-                  Designs
+                  Developments
                 </h2>
               </div>
             </button>

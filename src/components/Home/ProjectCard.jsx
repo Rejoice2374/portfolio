@@ -33,19 +33,24 @@ const ProjectCard = ({ url, title, description, tech }) => {
 
   return (
     <div className="project-card">
-      <h3 className="bg-transparent font-poppins p-1">{title}</h3>
+      <h3 className="bg-transparent font-poppins py-1 px-4">{title}</h3>
       <p className="project-description">{description}</p>
       <div className="project-preview-container">
         {loading ? (
-          <div className="loading-placeholder text-black">
+          <div className="loading-placeholder text-white">
             Loading preview...
           </div>
         ) : error ? (
-          <div className="error-placeholder text-blackCeleste">
+          <div className="error-placeholder text-white">
             Preview unavailable
             <br />
             {url && (
-              <a href={url} target="_blank" rel="noopener noreferrer">
+              <a
+                href={url}
+                className="text-darkCeleste hover:text-white"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Visit Project
               </a>
             )}
