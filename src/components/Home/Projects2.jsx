@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { projects } from "../../constants"; // Adjust the import path to where your JSON file is
 import ProjectCard from "./ProjectCard"; // Assuming ProjectCard is in a separate file
-import styles from "../../style";
 
 const Projects2 = () => {
   const [filter, setFilter] = useState("all"); // Optional: for filtering projects
 
   return (
-    <section className={styles.section1}>
+    <section className="flex flex-col items-center self-stretch justify-center pb-[50px] relative md:py-[40px] py-[20px] font-work">
       <div className="projects-container">
         <div className="project-intro">
           <h2>Projects</h2>

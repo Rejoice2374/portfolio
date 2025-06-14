@@ -6,10 +6,10 @@ const Home = () => {
     <div>
       <Hero />
       <Skills />
-      <Projects />
       <Projects2 />
       <Cta />
       <Services />
+      <Projects />
     </div>
   );
 };
