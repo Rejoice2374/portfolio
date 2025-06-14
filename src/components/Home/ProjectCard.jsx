@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const ProjectCard = ({ url, title, description }) => {
+const ProjectCard = ({ url, title, description, tech }) => {
   const [imageUrl, setImageUrl] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -33,13 +33,15 @@ const ProjectCard = ({ url, title, description }) => {
 
   return (
     <div className="project-card">
-      <h3>{title}</h3>
+      <h3 className="bg-transparent font-poppins p-1">{title}</h3>
       <p className="project-description">{description}</p>
       <div className="project-preview-container">
         {loading ? (
-          <div className="loading-placeholder">Loading preview...</div>
+          <div className="loading-placeholder text-black">
+            Loading preview...
+          </div>
         ) : error ? (
-          <div className="error-placeholder">
+          <div className="error-placeholder text-blackCeleste">
             Preview unavailable
             <br />
             {url && (

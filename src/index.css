@@ -220,14 +220,19 @@ html {
   margin: 0 auto;
 }
 
-.projects-grid {
+/* .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
+} */
+
+.projects-grid {
+  @apply items-start relative lg:w-[1050px] md:w-[690px] w-[315px] gap-[30px] lg:mx-[-80px] grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1;
 }
 
 .project-card {
+  background: transparent;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
@@ -236,12 +241,6 @@ html {
 
 .project-card:hover {
   transform: translateY(-5px);
-}
-
-.project-card h3 {
-  padding: 1rem;
-  margin: 0;
-  background: #f5f5f5;
 }
 
 .project-description {

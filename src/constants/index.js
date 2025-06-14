@@ -61,30 +61,36 @@ export const projects = [
     title: "TechPro Institute",
     description: "Development",
     imgUrl: "https://favochino.site/",
+    tech: "Reactjs & Tailwindcss",
   },
   {
     title: "One of Wun",
-    description: "Development & Founder",
+    description: "Development",
     imgUrl: "https://quest.somnia.network/",
+    tech: "Reactjs & Tailwindcss",
   },
   {
     title: "Merit Circle",
     description: "Design & Development",
     imgUrl: "https://yaps.kaito.ai/referral/1688844193379069953",
+    tech: "HTML, CSS & JavaScript",
   },
   {
     title: "Reabeam-G Schools",
     description: "Design & Development",
     imgUrl: "",
+    tech: "HTML, CSS & Javascript",
   },
   {
     title: "Home-easy",
-    description: "Design, Development & Founder",
+    description: "Design, Development",
     imgUrl: "",
+    tech: "Reactjs & Nodejs",
   },
   {
     title: "ShopIt",
     description: "Design, Development & Founder",
     imgUrl: "",
+    tech: "PHP",
   },
 ];

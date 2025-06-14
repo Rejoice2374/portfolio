@@ -26,7 +26,7 @@ const Development = () => {
   return (
     <section className={`projects-container`}>
       <div
-        className={`item-start relative lg:w-[1050px] md:w-[690px] w-[315px] gap-[30px] lg:mx[-80px] grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1`}
+        className={`items-start relative lg:w-[1050px] md:w-[690px] w-[315px] gap-[30px] lg:mx[-80px] grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1`}
       >
         {projects.map((proj, index) => (
           <div key={index} className="project">
