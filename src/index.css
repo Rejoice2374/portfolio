@@ -119,7 +119,7 @@ html {
 
 /* Skills */
 .skill-bx {
-  @apply rounded-[64px] bg-ski text-center py-[60px] px-[50px] md:mt-[-60px];
+  @apply rounded-[64px] bg-ski text-center md:py-[60px] md:px-[50px] p-[40px] md:mt-[-60px];
 }
 
 .skillh2 {
@@ -147,7 +147,7 @@ html {
 }
 
 .background-image-left {
-  @apply top-[28%] absolute bottom-0 w-[40%] -z-[4];
+  @apply absolute bottom-0 left-0 opacity-55 w-[50%] z-[4];
 }
 
 .skillChart {

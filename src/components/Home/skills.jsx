@@ -55,8 +55,8 @@ const Skills = () => {
             ))}
           </Carousel>
         </div>
+        <img className="background-image-left" src={colorSharp} alt="Fine" />
       </div>
-      <img className="background-image-left" src={colorSharp} alt="Fine" />
     </section>
   );
 };
