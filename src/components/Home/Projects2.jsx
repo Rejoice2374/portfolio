@@ -1,20 +1,26 @@
 import { useState } from "react";
-import { projects } from "../../constants"; // Adjust the import path to where your JSON file is
-import ProjectCard from "./ProjectCard"; // Assuming ProjectCard is in a separate file
+import { projects } from "../../constants";
+import ProjectCard from "./ProjectCard";
 
 const Projects2 = () => {
-  const [filter, setFilter] = useState("all"); // Optional: for filtering projects
+  const [filter, setFilter] = useState("all");
 
   return (
     <section className="flex flex-col items-center self-stretch justify-center pb-[50px] relative md:py-[40px] py-[20px] font-work">
       <div className="projects-container">
         <div className="project-intro">
-          <h2>Projects</h2>
+          <h2 className="lg:text-[36px] text-[22.4px] font-work font-semibold lg:leading-[42.8px] leading-[22.4px] text-center">
+            Projects
+          </h2>
           <p className="text-center text-coolAsh leading-[30px]">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
+            Favochino is a versatile developer with a passion for creating
+            innovative solutions. With expertise in web development and design,
+            using technologies like React, Node.js, Material UI, Tailwind CSS
+            and so many other modern day technology. Favochino brings ideas to
+            life through engaging user-friendly applications. Whether it's
+            crafting responsive websites or building dynamic web applications,
+            Favochino's skills and creativity shine through in every project.
+            <br />
           </p>
         </div>
 

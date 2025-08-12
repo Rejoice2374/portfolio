@@ -232,8 +232,8 @@ html {
 }
 
 .project-card {
-  background: transparent;
-  border: 1px solid #ddd;
+  background: #151515;
+  border: 1px solid #858584;
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s ease;
@@ -244,7 +244,6 @@ html {
 }
 
 .project-description {
-  padding: 0 1rem;
   color: #666;
 }
 

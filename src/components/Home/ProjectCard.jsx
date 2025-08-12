@@ -22,6 +22,7 @@ const ProjectCard = ({ url, title, description, tech }) => {
         const data = await response.json();
         setImageUrl(data.data.screenshot.url);
       } catch (err) {
+        console.error(err);
         setError(true);
       } finally {
         setLoading(false);
@@ -33,8 +34,6 @@ const ProjectCard = ({ url, title, description, tech }) => {
 
   return (
     <div className="project-card">
-      <h3 className="bg-transparent font-poppins py-1 px-4">{title}</h3>
-      <p className="project-description">{description}</p>
       <div className="project-preview-container">
         {loading ? (
           <div className="loading-placeholder text-white">
@@ -63,6 +62,11 @@ const ProjectCard = ({ url, title, description, tech }) => {
             style={{ cursor: "pointer" }}
           />
         )}
+      </div>
+      <div className="project-info py-1 px-4">
+        <h3 className="bg-transparent font-poppins">{title}</h3>
+        <p className="project-description">{description}</p>
+        <p className="project-tech">{tech}</p>
       </div>
     </div>
   );

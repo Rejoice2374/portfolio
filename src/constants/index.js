@@ -58,39 +58,39 @@ export const SkillLog = [
 
 export const projects = [
   {
+    title: "Funfiro",
+    description: "Design",
+    imgUrl: "https://rejoice2374.github.io/Funfiro/",
+    tech: "Reactjs & Nodejs",
+  },
+  {
+    title: "Homely",
+    description: "Design & Development",
+    imgUrl: "https://homely-frontend-lake.vercel.app/",
+    tech: "PHP",
+  },
+  {
+    title: "One of Wun",
+    description: "Development",
+    imgUrl: "https://one-of-wun.vercel.app/",
+    tech: "Reactjs & Tailwindcss",
+  },
+  {
+    title: "Merit Circle",
+    description: "Design & Development",
+    imgUrl: "https://rejoice2374.github.io/Merit-Circle/",
+    tech: "HTML, CSS & JavaScript",
+  },
+  {
     title: "TechPro Institute",
     description: "Development",
     imgUrl: "https://tech-pro-theta.vercel.app/",
     tech: "Reactjs & Tailwindcss",
   },
   {
-    title: "One of Wun",
-    description: "Development",
-    imgUrl: "https://favochino.site/",
-    tech: "Reactjs & Tailwindcss",
-  },
-  {
-    title: "Merit Circle",
-    description: "Design",
-    imgUrl: "https://rejoice2374.github.io/Merit-Circle/",
-    tech: "HTML, CSS & JavaScript",
-  },
-  {
     title: "Reabeam-G Schools",
     description: "Design",
     imgUrl: "https://react-tailwind-ten-ebon.vercel.app/",
     tech: "HTML, CSS & Javascript",
-  },
-  {
-    title: "Home-easy",
-    description: "Design & Development",
-    imgUrl: "https://rejoice2374.github.io/Funfiro/",
-    tech: "Reactjs & Nodejs",
-  },
-  {
-    title: "Football Heritage",
-    description: "Development",
-    imgUrl: "https://rejoice2374.github.io/Football-Heritage/",
-    tech: "PHP",
   },
 ];
