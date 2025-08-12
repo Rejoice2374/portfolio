@@ -25,14 +25,14 @@ const Projects2 = () => {
         </div>
 
         {/* Optional filter controls */}
-        <div className="flex flex-1 items-start relative lg:w-[1050px] md:w-[690px] w-[315px] lg:mx[-80px]">
+        <div className="filter-control flex flex-1 items-start relative lg:w-[1050px] md:w-[690px] w-[315px] lg:mx[-80px]">
           <div
-            className={`flex items-center ${
-              filter === "all" ? "border-b-2" : "border-0"
-            } border-coolAsh flex-1 gap-4 h-[60px] px-[30px] justify-center`}
+            className={`filter-item flex items-center ${
+              filter === "all" ? "active" : ""
+            } border-coolAsh flex-1 gap-4 h-[60px] md:px-[30px] justify-center`}
           >
             <button onClick={() => setFilter("all")}>
-              <div className="flex items-center gap-2.5 text-white">
+              <div className="filter-link flex items-center gap-2.5 text-white">
                 <h2
                   className={`lg:text-[22px] font-work font-semibold lg:leading-[30.8px] leading-[22.4px] text-center ${
                     filter === "all" ? "text-white" : "text-coolAsh"
@@ -44,12 +44,12 @@ const Projects2 = () => {
             </button>
           </div>
           <div
-            className={`flex items-center ${
-              filter === "development" ? "border-b-2" : "border-0"
-            } border-coolAsh flex-1 gap-4 h-[60px] px-[30px] justify-center`}
+            className={`filter-item flex items-center ${
+              filter === "development" ? "active" : ""
+            } flex-1 gap-4 h-[60px] md:px-[30px] justify-center`}
           >
             <button onClick={() => setFilter("development")}>
-              <div className="flex items-center gap-2.5 text-white">
+              <div className="filter-link flex items-center gap-2.5 text-white">
                 <h2
                   className={`lg:text-[22px] font-work font-semibold lg:leading-[30.8px] leading-[22.4px] text-center ${
                     filter === "development" ? "text-white" : "text-coolAsh"
@@ -62,12 +62,12 @@ const Projects2 = () => {
           </div>
 
           <div
-            className={`flex items-center ${
-              filter === "design" ? "border-b-2" : "border-0"
-            } border-coolAsh flex-1 gap-4 h-[60px] px-[30px] justify-center`}
+            className={`filter-item flex items-center ${
+              filter === "design" ? "active" : ""
+            } border-coolAsh flex-1 gap-4 h-[60px] md:px-[30px] justify-center`}
           >
             <button onClick={() => setFilter("design")}>
-              <div className="flex items-center gap-2.5 text-white">
+              <div className="filter-link flex items-center gap-2.5 text-white">
                 <h2
                   className={`lg:text-[22px] font-work font-semibold lg:leading-[30.8px] leading-[22.4px] text-center ${
                     filter === "design" ? "text-white" : "text-coolAsh"
@@ -80,6 +80,7 @@ const Projects2 = () => {
           </div>
         </div>
 
+        {/* Project grid */}
         <div className="projects-grid">
           {projects
             .filter((project) => {

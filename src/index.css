@@ -205,27 +205,41 @@ html {
   @apply flex flex-col items-center mb-2;
 }
 
-.projects {
-  @apply flex;
-}
-
-.project {
-  @apply flex p-4 bg-button;
-}
-
-/* special */
-.projects-section {
-  padding: 2rem;
-  max-width: 1200px;
+.filter-control {
   margin: 0 auto;
+  border-radius: 50px;
+  background-color: rgb(255 255 255 / 10%);
+  overflow: hidden;
 }
 
-/* .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+/* .filter-item {
+  width: 33.33333%;
 } */
+
+.filter-item {
+  background-color: transparent;
+  border-radius: 0;
+  position: relative;
+  transition: 0.3s ease-in-out;
+  text-align: center;
+  z-index: 0;
+}
+
+.filter-item::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+}
+
+.filter-item.active::before {
+  width: 100% !important;
+}
 
 .projects-grid {
   @apply items-start relative lg:w-[1050px] md:w-[690px] w-[315px] gap-[30px] lg:mx-[-80px] grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1;
