@@ -34,7 +34,7 @@ const ProjectCard = ({ url, title, description, tech }) => {
 
   return (
     <div className="project-card">
-      <div className="project-preview-container">
+      <div className="project-preview-container proj-imgbx">
         {loading ? (
           <div className="loading-placeholder text-white">
             Loading preview...
@@ -62,11 +62,11 @@ const ProjectCard = ({ url, title, description, tech }) => {
             style={{ cursor: "pointer" }}
           />
         )}
-      </div>
-      <div className="project-info py-1 px-4">
-        <h3 className="bg-transparent font-poppins">{title}</h3>
-        <p className="project-description">{description}</p>
-        <p className="project-tech">{tech}</p>
+        <div className="proj-txtx">
+          <h4 className="bg-transparent font-poppins">{title}</h4>
+          <span className="">{description}</span>
+          <p className="">{tech}</p>
+        </div>
       </div>
     </div>
   );

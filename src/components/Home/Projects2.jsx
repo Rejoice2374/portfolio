@@ -34,7 +34,7 @@ const Projects2 = () => {
             <button onClick={() => setFilter("all")}>
               <div className="filter-link flex items-center gap-2.5 text-white">
                 <h2
-                  className={`lg:text-[22px] font-work font-semibold lg:leading-[30.8px] leading-[22.4px] text-center ${
+                  className={`lg:text-[22px] font-work md:font-semibold lg:leading-[30.8px] leading-[22.4px] text-center ${
                     filter === "all" ? "text-white" : "text-coolAsh"
                   }`}
                 >

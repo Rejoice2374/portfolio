@@ -61,19 +61,19 @@ export const projects = [
     title: "Funfiro",
     description: "Design",
     imgUrl: "https://rejoice2374.github.io/Funfiro/",
-    tech: "Reactjs & Nodejs",
+    tech: "HTML, CSS & JavaScript",
   },
   {
     title: "Homely",
     description: "Design & Development",
     imgUrl: "https://homely-frontend-lake.vercel.app/",
-    tech: "PHP",
+    tech: "Reactjs, Node & Material UI",
   },
   {
     title: "One of Wun",
     description: "Development",
     imgUrl: "https://one-of-wun.vercel.app/",
-    tech: "Reactjs & Tailwindcss",
+    tech: "React & Tailwindcss",
   },
   {
     title: "Merit Circle",
@@ -91,6 +91,6 @@ export const projects = [
     title: "Reabeam-G Schools",
     description: "Design",
     imgUrl: "https://react-tailwind-ten-ebon.vercel.app/",
-    tech: "HTML, CSS & Javascript",
+    tech: "Reactjs & Tailwindcss",
   },
 ];
