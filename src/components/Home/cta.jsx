@@ -19,29 +19,29 @@ const Cta = () => {
       ...prevDetails,
       [category]: value,
     }));
+  };
 
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      setButtonText("Sending...");
-      let response = await fetch("https://localhost/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formDetails),
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setButtonText("Sending...");
+    let response = await fetch("https://localhost/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formDetails),
+    });
+    setButtonText("Send");
+    let result = await response.json();
+    setFormDetails(formInitialDetails);
+    if (result.code === 200) {
+      setStatus({ success: true, message: "Message sent successfully!" });
+    } else {
+      setStatus({
+        success: false,
+        message: "An error occurred. Please try again.",
       });
-      setButtonText("Send");
-      let result = await response.json();
-      setFormDetails(formInitialDetails);
-      if (result.code === 200) {
-        setStatus({ success: true, message: "Message sent successfully!" });
-      } else {
-        setStatus({
-          success: false,
-          message: "An error occurred. Please try again.",
-        });
-      }
-    };
+    }
   };
 
   return (
