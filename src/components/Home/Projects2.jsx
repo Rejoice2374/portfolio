@@ -6,7 +6,10 @@ const Projects2 = () => {
   const [filter, setFilter] = useState("all");
 
   return (
-    <section className="flex flex-col items-center self-stretch justify-center pb-[50px] relative md:py-[40px] py-[20px] font-work">
+    <section
+      className="flex flex-col items-center self-stretch justify-center pb-[50px] relative md:py-[40px] py-[20px] font-work"
+      id="projects"
+    >
       <div className="projects-container">
         <div className="project-intro">
           <h2 className="lg:text-[36px] text-[22.4px] font-work font-semibold lg:leading-[42.8px] leading-[22.4px] text-center">
