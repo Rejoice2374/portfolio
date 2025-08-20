@@ -1,63 +1,34 @@
 import React from "react";
+import Logo from "../assets/Ft-logoText-purple.png";
+import { navIcons } from "../constants";
 
 const Footer = () => {
+  const year = new Date().getFullYear();
+
   return (
     <footer>
       <div className="footer-content">
-        <p>
-          &copy; {new Date().getFullYear()} Your Company Name. All rights
-          reserved.
-        </p>
-        <ul className="social-links">
-          <li>
-            <a
-              href="https://www.facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Facebook
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Twitter
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Instagram
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div className="footer-bottom">
-        <p>Designed and Developed by Your Name</p>
+        <div className="logo">
+          <img src={Logo} alt="" />
+        </div>
+        <div className="social-links flex flex-col items-center">
+          <div className="flex gap-4">
+            {navIcons.map((n) => (
+              <a
+                key={n.id}
+                href={n.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-button text-2xl p-1.5 rounded-2xl hover:text-white hover:bg-button transition duration-300 ease-in-out"
+              >
+                {<n.icon />}
+              </a>
+            ))}
+          </div>
+          <div className="footer-bottom">
+            <p>© Favochino Tech {year}. All Right Reserved</p>
+          </div>
+        </div>
       </div>
     </footer>
   );

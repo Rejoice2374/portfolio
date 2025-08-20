@@ -62,12 +62,12 @@ const Navbar = () => {
                   : ""
               }`}
             >
-              <Link
-                to={`#${n.path.toLowerCase()}`}
+              <a
+                href={`#${n.path.toLowerCase()}`}
                 onClick={() => setActiveLink(n.path.toLowerCase())}
               >
                 {n.title}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
@@ -116,15 +116,15 @@ const Navbar = () => {
                         : ""
                     }`}
                   >
-                    <Link
-                      to={`#${n.path.toLowerCase()}`}
+                    <a
+                      href={`#${n.path.toLowerCase()}`}
                       onClick={() => {
                         setActiveLink(n.path.toLowerCase());
                         setToggleMenu(false);
                       }}
                     >
                       {n.title}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>

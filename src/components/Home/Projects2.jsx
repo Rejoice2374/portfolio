@@ -8,7 +8,7 @@ const Projects2 = () => {
   return (
     <section
       className="flex flex-col items-center self-stretch justify-center pb-[50px] relative md:py-[40px] py-[20px] font-work"
-      id="projects"
+      id="project"
     >
       <div className="projects-container">
         <div className="project-intro">

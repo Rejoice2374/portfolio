@@ -21,7 +21,7 @@ export const navLinks = [
   },
   {
     id: 4,
-    path: "contacts",
+    path: "connect",
     title: "Contacts",
   },
 ];

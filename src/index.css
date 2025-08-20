@@ -336,3 +336,8 @@ html {
 .project-filters button:hover {
   background: #e0e0e0;
 }
+
+/* Footer */
+.footer-content {
+  @apply flex md:flex-row flex-col items-center justify-around bg-masala;
+}
