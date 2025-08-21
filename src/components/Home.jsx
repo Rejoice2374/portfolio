@@ -3,7 +3,7 @@ import { Hero, Projects2, Cta, Services, Skills } from "./Home/index";
 
 const Home = () => {
   return (
-    <div>
+    <div id="home">
       <Hero />
       <Skills />
       <Projects2 />

@@ -7,7 +7,7 @@ const Projects2 = () => {
 
   return (
     <section
-      className="flex flex-col items-center self-stretch justify-center pb-[50px] relative md:py-[40px] py-[20px] font-work"
+      className="flex flex-col items-center self-stretch justify-center bg-black pb-[50px] relative md:py-[40px] py-[20px] font-work"
       id="project"
     >
       <div className="projects-container">
@@ -19,10 +19,7 @@ const Projects2 = () => {
             Favochino is a versatile developer with a passion for creating
             innovative solutions. With expertise in web development and design,
             using technologies like React, Node.js, Material UI, Tailwind CSS
-            and so many other modern day technology. Favochino brings ideas to
-            life through engaging user-friendly applications. Whether it's
-            crafting responsive websites or building dynamic web applications,
-            Favochino's skills and creativity shine through in every project.
+            and so many other modern day technology. These are few of my works.
             <br />
           </p>
         </div>

@@ -46,12 +46,12 @@ const Cta = () => {
 
   return (
     <>
-      <section className="contact" id="connect">
-        <div className="flex items-center">
+      <section className="cta flex justify-center" id="connect">
+        <div className="contact">
           <div className="image">
             <img src={ContactImg} alt="Contact Us" />
           </div>
-          <div className="right">
+          <div className="form-input">
             <h2>Get In Touch</h2>
             <form onSubmit={handleSubmit}>
               <div className="name">
@@ -68,18 +68,20 @@ const Cta = () => {
                   onChange={(e) => onFormUpdate("lastName", e.target.value)}
                 />
               </div>
-              <input
-                type="email"
-                placeholder="Email Address"
-                value={formDetails.email}
-                onChange={(e) => onFormUpdate("email", e.target.value)}
-              />
-              <input
-                type="tel"
-                placeholder="Phone Number"
-                value={formDetails.phone}
-                onChange={(e) => onFormUpdate("phone", e.target.value)}
-              />
+              <div className="contact-info">
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  value={formDetails.email}
+                  onChange={(e) => onFormUpdate("email", e.target.value)}
+                />
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  value={formDetails.phone}
+                  onChange={(e) => onFormUpdate("phone", e.target.value)}
+                />
+              </div>
               <textarea
                 rows="6"
                 placeholder="Message"

@@ -16,7 +16,11 @@
   --color-darkCeleste: #b3b3b3;
   --color-blackCeleste: #2b2b2b;
   --color-ashly: #b8b8b8;
-  --color-textgradient: "linear-gradient(90.21deg, rgba(23, 54, 124, 0.5) -5.91%, rgba(74, 47, 1, 0.5) 111.58%)";
+  --color-textgradient: linear-gradient(
+    90.21deg,
+    rgba(23, 54, 124, 0.5) -5.91%,
+    rgba(74, 47, 1, 0.5) 111.58%
+  );
   --font-poppins: "Poppins", sans-serif;
   --font-nunito: "Nunito Sans", sans-serif;
   --font-roboto: "Roboto Condensed", sans-serif;
@@ -102,11 +106,16 @@ html {
 }
 
 .tagline {
-  @apply inline-block lg:text-[20px] font-bold py-2 px-2.5 border border-ashes bg-textgradient text-white;
+  @apply inline-block lg:text-[20px] font-bold py-2 px-2.5 border border-ashes text-white;
+  background: linear-gradient(
+    90.21deg,
+    rgba(23, 54, 124, 0.5) -5.91%,
+    rgba(74, 47, 1, 0.5) 111.58%
+  );
 }
 
 .banner-heading {
-  @apply block lg:text-[52px] md:text-[35.6px] text-[22.4px] font-bold text-amber-100 lg:w-[92%] md:w-[86%] w-full md:text-left lg:h-[240px] md:h-[160px] h-[120px] text-center;
+  @apply block lg:text-[52px] md:text-[35.6px] text-[22.4px] font-bold text-amber-100 lg:w-[92%] md:w-[86%] w-full md:text-left lg:h-[240px] md:h-[160px] h-[100px] text-center;
 }
 
 .banner-text {
@@ -337,7 +346,114 @@ html {
   background: #e0e0e0;
 }
 
+/* Cta */
+.cta {
+  background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
+  padding: 60px 0;
+}
+.contact {
+  @apply flex md:flex-row flex-col items-center justify-center relative lg:w-[1050px] md:w-[840px] w-[315px] gap-[30px];
+}
+
+.image {
+  @apply flex items-center justify-center lg:w-[420px] md:w-[350px] w-[300px] mb-4;
+}
+
+.contact img {
+  @apply w-[92%] object-cover;
+  animation: uptown 3s linear infinite;
+}
+@keyframes uptown {
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+.form-input h2 {
+  @apply text-white font-bold font-poppins lg:text-[45px] md:text-[35px] text-[28px] leading-[1.2em] md:mb-6 mb-4;
+}
+
+.form-input {
+  @apply flex flex-col items-start justify-center;
+}
+.name {
+  @apply flex flex-col md:flex-row items-center justify-between w-full gap-4 mb-4;
+}
+
+.contact-info {
+  @apply flex flex-col md:flex-row items-center justify-center w-full gap-4 mb-4;
+}
+
+.contact form input,
+.contact form textarea {
+  @apply w-full border border-ashes rounded-[20px] text-white p-[10px] text-[18px] font-medium font-roboto mb-1 md:px-[26px] md:py-[18px];
+  background: rgba(255, 255, 255, 0.1);
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  transition: 0.3s ease-in-out;
+}
+.contact form input:focus,
+.contact form textarea:focus {
+  background: rgba(255, 255, 255, 1);
+  color: #121212;
+}
+.contact form input::placeholder,
+.contact form textarea::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+}
+.contact form input:focus::placeholder,
+.contact form textarea:focus::placeholder {
+  color: #121212;
+  opacity: 0.8;
+}
+.contact form button {
+  font-weight: 700;
+  color: #000;
+  background-color: #fff;
+  padding: 14px 48px;
+  font-size: 18px;
+  margin-top: 25px;
+  border-radius: 0;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+.contact form button span {
+  z-index: 1;
+  position: relative;
+}
+.contact form button:hover {
+  color: #fff;
+}
+.contact form button::before {
+  content: "";
+  background: #121212;
+  color: #fff;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition: 0.3s ease-in-out;
+}
+.contact form button:hover::before {
+  width: 100%;
+}
+
 /* Footer */
 .footer-content {
-  @apply flex md:flex-row flex-col items-center justify-around bg-masala;
+  @apply flex md:flex-row flex-col items-center justify-around p-5 bg-masala;
+}
+
+.footer-content .logo img {
+  @apply md:w-full w-[320px] mb-4;
 }
