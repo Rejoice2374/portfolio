@@ -8,7 +8,6 @@ const Home = () => {
       <Skills />
       <Projects2 />
       <Cta />
-      <Services />
     </div>
   );
 };
