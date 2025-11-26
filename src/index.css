@@ -441,14 +441,15 @@ html {
   z-index: 1;
   position: relative;
 }
+
 .contact form button:hover {
-  color: #fff;
-}
-.contact form button::before {
-  content: "";
   background: #121212;
   color: #fff;
-  width: 0;
+}
+
+.contact form button::before {
+  background: #121212;
+  color: #fff;
   height: 100%;
   position: absolute;
   top: 0;
@@ -456,6 +457,7 @@ html {
   z-index: 0;
   transition: 0.3s ease-in-out;
 }
+
 .contact form button:hover::before {
   width: 100%;
 }
