@@ -34,9 +34,10 @@ const Projects2 = () => {
             <button onClick={() => setFilter("all")}>
               <div className="filter-link flex items-center gap-2.5 text-white">
                 <h2
-                  className={`lg:text-[22px] font-work md:font-semibold lg:leading-[30.8px] leading-[22.4px] text-center ${
-                    filter === "all" ? "text-white" : "text-coolAsh"
-                  }`}
+                  className={`text-sm md:text-base lg:text-[22px] font-work font-semibold 
+  leading-[20px] md:leading-[22px] lg:leading-[30.8px] text-center 
+  whitespace-nowrap truncate
+  ${filter === "all" ? "text-white" : "text-coolAsh"}`}
                 >
                   All
                 </h2>
@@ -46,14 +47,15 @@ const Projects2 = () => {
           <div
             className={`filter-item flex items-center ${
               filter === "development" ? "active" : ""
-            } flex-1 gap-4 h-[60px] md:px-[30px] justify-center`}
+            } md:flex-1 flex-auto gap-4 h-[60px] md:px-[30px] justify-center`}
           >
             <button onClick={() => setFilter("development")}>
               <div className="filter-link flex items-center gap-2.5 text-white">
                 <h2
-                  className={`lg:text-[22px] font-work font-semibold lg:leading-[30.8px] leading-[22.4px] text-center ${
-                    filter === "development" ? "text-white" : "text-coolAsh"
-                  }`}
+                  className={`text-sm md:text-base lg:text-[22px] font-work font-semibold 
+  leading-[20px] md:leading-[22px] lg:leading-[30.8px] text-center 
+  whitespace-nowrap truncate
+  ${filter === "development" ? "text-white" : "text-coolAsh"}`}
                 >
                   Developments
                 </h2>
@@ -69,9 +71,10 @@ const Projects2 = () => {
             <button onClick={() => setFilter("design")}>
               <div className="filter-link flex items-center gap-2.5 text-white">
                 <h2
-                  className={`lg:text-[22px] font-work font-semibold lg:leading-[30.8px] leading-[22.4px] text-center ${
-                    filter === "design" ? "text-white" : "text-coolAsh"
-                  }`}
+                  className={`text-sm md:text-base lg:text-[22px] font-work font-semibold 
+  leading-[20px] md:leading-[22px] lg:leading-[30.8px] text-center 
+  whitespace-nowrap truncate
+  ${filter === "design" ? "text-white" : "text-coolAsh"}`}
                 >
                   Designs
                 </h2>
