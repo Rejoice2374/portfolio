@@ -5,6 +5,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { useLocation } from "react-router-dom";
 import styles from "../style";
 import { MoreVertical } from "lucide-react";
+import Rejoice from "../assets/Rejoice.jpg";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -138,15 +139,15 @@ const Navbar = () => {
 
             <div className="border-t border-button flex p-3 gap-3 items-center">
               <img
-                src="https://ui-avatars.com/api/?background=c7d2fe&color=3730a3&bold=true"
-                className="w-10 h-10 rounded-md"
+                src={Rejoice}
+                className="w-7 h-8 rounded-full object-cover"
                 alt=""
               />
               <div className="flex justify-between items-center w-full">
                 <div>
-                  <h4 className="font-semibold">John Doe</h4>
+                  <h4 className="font-semibold">Rejoice Adeboye</h4>
                   <span className="text-xs text-gray-400">
-                    johndoe@gmail.com
+                    adeboyerejoice2374@gmail.com
                   </span>
                 </div>
                 <MoreVertical size={20} />
