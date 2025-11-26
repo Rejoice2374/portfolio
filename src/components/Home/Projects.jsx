@@ -2,7 +2,7 @@ import { useState } from "react";
 import { projects } from "../../constants";
 import ProjectCard from "./ProjectCard";
 
-const Projects2 = () => {
+const Projects = () => {
   const [filter, setFilter] = useState("all");
 
   return (
@@ -105,4 +105,4 @@ const Projects2 = () => {
   );
 };
 
-export default Projects2;
+export default Projects;
