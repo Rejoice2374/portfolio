@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Logo from "../assets/Ft-logoText-purple.png";
-import { useState, useEffect } from "react";
 import { navLinks, navIcons } from "../constants";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import styles from "../style";
+import { MoreVertical } from "lucide-react";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -14,27 +14,15 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    // Extract the hash from the URL (e.g., "#home" from "http://example.com/#home")
     const hash = location.hash;
-    if (hash) {
-      setActiveLink(hash.substring(1)); // Remove the '#' to match with path in navLinks
-    } else {
-      // Set default active link if no hash is present
-      setActiveLink(navLinks[0]?.path.toLowerCase() || "");
-    }
+    setActiveLink(hash ? hash.substring(1) : navLinks[0]?.path.toLowerCase());
   }, [location]);
 
   return (
@@ -47,11 +35,16 @@ const Navbar = () => {
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-between"
       >
-        <div className="flex lg:flex-1">
-          <a href="#" className="flex gap-2 items-center">
-            <img alt="" src={Logo} className="h-12 w-auto inline" />
-          </a>
-        </div>
+        {/* Logo */}
+        {!toggleMenu && (
+          <div className="flex lg:flex-1">
+            <a href="#" className="flex gap-2 items-center">
+              <img alt="" src={Logo} className="h-12 w-auto inline" />
+            </a>
+          </div>
+        )}
+
+        {/* Desktop Links */}
         <ul className="list-none lg:flex hidden text-[18px] font-medium items-center flex-1 gap-2">
           {navLinks.map((n) => (
             <li
@@ -71,6 +64,8 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+
+        {/* Icons */}
         <div className="hidden lg:flex gap-4">
           {navIcons.map((n) => (
             <a
@@ -78,44 +73,55 @@ const Navbar = () => {
               href={n.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-button text-2xl p-1.5 rounded-2xl hover:text-white hover:bg-button transition duration-300 ease-in-out"
+              className="text-button text-2xl p-1.5 rounded-2xl hover:text-white hover:bg-button transition"
             >
               {<n.icon />}
             </a>
           ))}
         </div>
+
+        {/* Button */}
         <div className="hidden lg:flex">
           <a href="#connect">
-            <button className={`${styles.navBtnText}`}>Let’s Connect</button>
+            <button className={styles.navBtnText}>Let’s Connect</button>
           </a>
         </div>
 
+        {/* Mobile Menu Button */}
         <div className="lg:hidden flex flex-1 justify-end items-center">
           {toggleMenu ? (
             <XMarkIcon
               className="hamburger text-button cursor-pointer w-6"
               onClick={() => setToggleMenu(false)}
-              aria-label="Close menu"
             />
           ) : (
             <Bars3Icon
               className="hamburger text-button cursor-pointer w-6"
               onClick={() => setToggleMenu(true)}
-              aria-label="Open menu"
             />
           )}
-          {toggleMenu && (
-            <div className="flex flex-col absolute top-[75px] z-10 right-0 bg-secondary h-[100vh] p-[20px] w-[200px] rounded-lg shadow-lg">
-              <ul className="flex flex-col gap-2 items-center">
+        </div>
+      </nav>
+
+      {/* Mobile Sidebar */}
+      {toggleMenu && (
+        <>
+          {/* Background Overlay */}
+          <div
+            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
+            onClick={() => setToggleMenu(false)}
+          />
+
+          {/* Sidebar */}
+          <aside className="fixed top-0 left-0 h-screen w-64 bg-black-pearl-950 border-r shadow-lg border-button z-50 overflow-y-auto no-scrollbar justify-between flex flex-col">
+            <div>
+              <div className="p-4 flex items-center justify-between">
+                <img src={Logo} className="w-32" alt="Logo" />
+              </div>
+
+              <ul className="flex-1 px-3">
                 {navLinks.map((n) => (
-                  <li
-                    key={n.id}
-                    className={`p-[16px] text-button hover:text-coolAsh transition duration-300 ease-in-out ${
-                      activeLink === n.path.toLowerCase()
-                        ? "border-b-2 border-blue-500"
-                        : ""
-                    }`}
-                  >
+                  <li key={n.id} className="p-4 text-button hover:text-white">
                     <a
                       href={`#${n.path.toLowerCase()}`}
                       onClick={() => {
@@ -128,23 +134,27 @@ const Navbar = () => {
                   </li>
                 ))}
               </ul>
-              <div className="lg:hidden flex gap-4">
-                {navIcons.map((n) => (
-                  <a
-                    key={n.id}
-                    href={n.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-button text-2xl hover:text-coolAsh transition duration-300 ease-in-out"
-                  >
-                    {<n.icon />}
-                  </a>
-                ))}
+            </div>
+
+            <div className="border-t border-button flex p-3 gap-3 items-center">
+              <img
+                src="https://ui-avatars.com/api/?background=c7d2fe&color=3730a3&bold=true"
+                className="w-10 h-10 rounded-md"
+                alt=""
+              />
+              <div className="flex justify-between items-center w-full">
+                <div>
+                  <h4 className="font-semibold">John Doe</h4>
+                  <span className="text-xs text-gray-400">
+                    johndoe@gmail.com
+                  </span>
+                </div>
+                <MoreVertical size={20} />
               </div>
             </div>
-          )}
-        </div>
-      </nav>
+          </aside>
+        </>
+      )}
     </header>
   );
 };

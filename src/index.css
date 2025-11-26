@@ -16,6 +16,17 @@
   --color-darkCeleste: #b3b3b3;
   --color-blackCeleste: #2b2b2b;
   --color-ashly: #b8b8b8;
+  --color-black-pearl-50: #eff7ff;
+  --color-black-pearl-100: #deeeff;
+  --color-black-pearl-200: #b5deff;
+  --color-black-pearl-300: #74c5ff;
+  --color-black-pearl-400: #2ba8ff;
+  --color-black-pearl-500: #008cf8;
+  --color-black-pearl-600: #006ed5;
+  --color-black-pearl-700: #0057ac;
+  --color-black-pearl-800: #004a8e;
+  --color-black-pearl-900: #053e75;
+  --color-black-pearl-950: #02162c;
   --color-textgradient: linear-gradient(
     90.21deg,
     rgba(23, 54, 124, 0.5) -5.91%,

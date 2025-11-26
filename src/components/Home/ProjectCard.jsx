@@ -66,6 +66,16 @@ const ProjectCard = ({ url, title, description, tech }) => {
           <h4 className="bg-transparent font-poppins">{title}</h4>
           <span className="">{description}</span>
           <p className="">{tech}</p>
+          <div className="mt-3">
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2 bg-button text-white rounded-md font-semibold hover:bg-button-hov  transition"
+            >
+              Visit
+            </a>
+          </div>
         </div>
       </div>
     </div>
