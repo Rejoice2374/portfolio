@@ -43,6 +43,9 @@ const Skills = () => {
           <Carousel
             responsive={responsive}
             infinite={true}
+            autoPlay={responsive !== "mobile" ? true : false}
+            autoPlaySpeed={3000}
+            transitionDuration={500}
             className="owl-carousel owl-theme skill-slider"
           >
             {SkillLog.map((skillItem) => (

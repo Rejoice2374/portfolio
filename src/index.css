@@ -174,6 +174,10 @@ html {
   @apply relative w-[160px] h-[160px] flex items-center justify-center mb-4;
 }
 
+.react-multiple-carousel__arrow {
+  z-index: 1 !important;
+}
+
 .outer {
   height: 160px;
   width: 160px;
