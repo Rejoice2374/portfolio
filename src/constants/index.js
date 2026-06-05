@@ -58,9 +58,9 @@ export const SkillLog = [
 
 export const projects = [
   {
-    title: "Funfiro",
+    title: "HabitCheck",
     description: "Design",
-    imgUrl: "https://rejoice2374.github.io/Funfiro/",
+    imgUrl: "https://habitcheck-kappa.vercel.app/",
     tech: "HTML, CSS & JavaScript",
   },
   {
@@ -82,9 +82,9 @@ export const projects = [
     tech: "HTML, CSS & JavaScript",
   },
   {
-    title: "TechPro Institute",
+    title: "Cellar Brothers",
     description: "Development",
-    imgUrl: "https://tech-pro-theta.vercel.app/",
+    imgUrl: "https://cellarbrothers-wbro.vercel.app/",
     tech: "Reactjs & Tailwindcss",
   },
   {
