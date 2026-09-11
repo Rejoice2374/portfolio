@@ -35,9 +35,10 @@ const Skills = () => {
         <div className="skill-bx flex flex-1 flex-col items-center justify-center self-stretch gap-[10px] text-white font-work">
           <h2 className="skillh2">Skills</h2>
           <p className="skillp">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.<br></br> Lorem Ipsum has been the industry's standard
-            dummy text.
+            I’m a Full-Stack Web Developer focused on building responsive,
+            scalable, and user-friendly web applications. From crafting modern
+            interfaces to developing APIs, databases, authentication, and
+            integrations, I enjoy turning ideas into reliable digital solutions.
           </p>
 
           <Carousel
