@@ -50,10 +50,12 @@ export const navIcons = [
 ];
 
 export const SkillLog = [
-  { id: 1, skill: "Web Development", score: 96 },
-  { id: 1, skill: "Web Design", score: 90 },
-  { id: 1, skill: "Brand Identity", score: 86 },
-  { id: 1, skill: "Logo Design", score: 92 },
+  { id: 1, skill: "React", score: 96 },
+  { id: 1, skill: "JavaScript & TypeScript", score: 90 },
+  { id: 1, skill: "Database Management", score: 86 },
+  { id: 1, skill: "API Development", score: 92 },
+  { id: 1, skill: "Authentication", score: 88 },
+  { id: 1, skill: "API Integrations", score: 84 },
 ];
 
 export const projects = [
